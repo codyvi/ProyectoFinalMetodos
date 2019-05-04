@@ -85,6 +85,8 @@ function edit1_Callback(hObject, eventdata, handles)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
 
+    xSuperior = str2double(get(hObject,'String')) 
+    
     % Hints: get(hObject,'String') returns contents of edit1 as text
     %        str2double(get(hObject,'String')) returns contents of edit1 as a double
 end 
@@ -110,6 +112,8 @@ function edit2_Callback(hObject, eventdata, handles)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
 
+    xInferior = str2double(get(hObject,'String')) 
+
     % Hints: get(hObject,'String') returns contents of edit2 as text
     %        str2double(get(hObject,'String')) returns contents of edit2 as a double
 end
@@ -133,6 +137,8 @@ function edit3_Callback(hObject, eventdata, handles)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
 
+    ySuperior = str2double(get(hObject,'String')) 
+
     % Hints: get(hObject,'String') returns contents of edit3 as text
     %        str2double(get(hObject,'String')) returns contents of edit3 as a double
 end
@@ -142,7 +148,7 @@ function edit3_CreateFcn(hObject, eventdata, handles)
     % hObject    handle to edit3 (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    empty - handles not created until after all CreateFcns called
-
+    
     % Hint: edit controls usually have a white background on Windows.
     %       See ISPC and COMPUTER.
     if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
@@ -155,6 +161,8 @@ function edit4_Callback(hObject, eventdata, handles)
     % hObject    handle to edit4 (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
+   
+    yInferior = str2double(get(hObject,'String')) 
 
     % Hints: get(hObject,'String') returns contents of edit4 as text
     %        str2double(get(hObject,'String')) returns contents of edit4 as a double
@@ -179,6 +187,8 @@ function edit5_Callback(hObject, eventdata, handles)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
 
+        timeInterval = str2double(get(hObject,'String')) 
+    
     % Hints: get(hObject,'String') returns contents of edit5 as text
     %        str2double(get(hObject,'String')) returns contents of edit5 as a double
 end
@@ -201,6 +211,8 @@ function edit6_Callback(hObject, eventdata, handles)
     % hObject    handle to edit6 (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
+   
+    numPoints = str2double(get(hObject,'String')) 
 
     % Hints: get(hObject,'String') returns contents of edit6 as text
     %        str2double(get(hObject,'String')) returns contents of edit6 as a double
@@ -224,6 +236,7 @@ function pushbutton1_Callback(hObject, eventdata, handles)
     % hObject    handle to pushbutton1 (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
+    disp("Graficar");
 end
 
 % --- Executes on button press in pushbutton2.
@@ -231,4 +244,5 @@ function pushbutton2_Callback(hObject, eventdata, handles)
     % hObject    handle to pushbutton2 (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
+    disp("Volver");
 end
