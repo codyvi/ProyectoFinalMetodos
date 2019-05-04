@@ -22,7 +22,7 @@ function varargout = Problema4(varargin)
 
     % Edit the above text to modify the response to help Problema4
 
-    % Last Modified by GUIDE v2.5 04-May-2019 12:57:45
+    % Last Modified by GUIDE v2.5 04-May-2019 13:49:14
 
     % Begin initialization code - DO NOT EDIT
     gui_Singleton = 1;
@@ -53,10 +53,10 @@ function Problema4_OpeningFcn(hObject, eventdata, handles, varargin)
     % varargin   command line arguments to Problema4 (see VARARGIN)
 
     % Create the data to plot. 
-%     handles.peaks=peaks(35); handles.membrane=membrane; [x,y] = meshgrid(-8:.5:8); r = sin(y) * cos(x) + eps; sinc = sin(r)./r; handles.sinc = sinc; 
+%      handles.peaks=peaks(35); handles.membrane=membrane; [x,y] = meshgrid(-8:.5:8); r = sin(y) * cos(x) + eps; sinc = sin(r)./r; handles.sinc = sinc; 
 %     % Set the current data value. 
-%     handles.current_data = handles.peaks; surf(handles.current_data)
-%     surf(x, y, r);
+%      handles.current_data = handles.peaks; surf(handles.current_data)
+%      surf(x, y, r);
 
     % Choose default command line output for Problema4
     handles.output = hObject;
@@ -84,8 +84,6 @@ function xSuperior_Callback(hObject, eventdata, handles)
     % hObject    handle to xSuperior (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
-
-    xSuperior = str2double(get(hObject,'String')) 
     
     % Hints: get(hObject,'String') returns contents of xSuperior as text
     %        str2double(get(hObject,'String')) returns contents of xSuperior as a double
@@ -112,8 +110,6 @@ function xInferior_Callback(hObject, eventdata, handles)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
 
-    xInferior = str2double(get(hObject,'String')) 
-
     % Hints: get(hObject,'String') returns contents of xInferior as text
     %        str2double(get(hObject,'String')) returns contents of xInferior as a double
 end
@@ -137,8 +133,6 @@ function ySuperior_Callback(hObject, eventdata, handles)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
 
-    ySuperior = str2double(get(hObject,'String')) 
-
     % Hints: get(hObject,'String') returns contents of ySuperior as text
     %        str2double(get(hObject,'String')) returns contents of ySuperior as a double
 end
@@ -161,8 +155,6 @@ function yInferior_Callback(hObject, eventdata, handles)
     % hObject    handle to yInferior (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
-   
-    yInferior = str2double(get(hObject,'String')) 
 
     % Hints: get(hObject,'String') returns contents of yInferior as text
     %        str2double(get(hObject,'String')) returns contents of yInferior as a double
@@ -186,8 +178,6 @@ function timeInterval_Callback(hObject, eventdata, handles)
     % hObject    handle to timeInterval (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
-
-        timeInterval = str2double(get(hObject,'String')) 
     
     % Hints: get(hObject,'String') returns contents of timeInterval as text
     %        str2double(get(hObject,'String')) returns contents of timeInterval as a double
@@ -210,8 +200,6 @@ function numPoints_Callback(hObject, eventdata, handles)
     % hObject    handle to numPoints (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
-
-    numPoints = str2double(get(hObject,'String'))
     
     % Hints: get(hObject,'String') returns contents of numPoints as text
     %        str2double(get(hObject,'String')) returns contents of numPoints as a double
@@ -235,30 +223,23 @@ function Graficar_Callback(hObject, eventdata, handles)
     % hObject    handle to Graficar (see GCBO)
     % eventdata  reserved - to be defined in a future version of MATLAB
     % handles    structure with handles and user data (see GUIDATA)
-    disp("Graficar");
+    
     xSuperior = str2double(get(handles.xSuperior,'String'));
     xInferior = str2double(get(handles.xInferior,'String'));
     ySuperior = str2double(get(handles.ySuperior,'String'));
     yInferior = str2double(get(handles.yInferior,'String'));
     timeInterval = str2double(get(handles.timeInterval,'String'));
     numPoints = str2double(get(handles.numPoints,'String'));
+
+    x = xInferior:0.05:xSuperior;
     
-    disp(xSuperior);
-    disp(xInferior);
-    disp(ySuperior);
-    disp(yInferior);
-    disp(timeInterval);
-    disp(numPoints);
-    
-    handles.peaks=peaks(35); 
-    handles.membrane=membrane; 
-    [x,y] = meshgrid(-8:.5:8); 
-    r = sin(y) * cos(x) + eps; 
-    sinc = sin(r)./r; handles.sinc = sinc; 
-    % Set the current data value. 
-    handles.current_data = handles.peaks; surf(handles.current_data)
-    surf(x, y, r);
-    
+    for i=1:numPoints
+%         y = asin(y/cos(i));
+        y = sin(x+i);
+        plot(x,y);
+        pause(timeInterval);
+    end
+
 end
 
 % --- Executes on button press in Volver.
