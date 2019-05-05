@@ -95,6 +95,8 @@ function Problema3butt_Callback(hObject, eventdata, handles)
 % hObject    handle to Problema3butt (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+ejercicio3GUI
+close(Menu)
 
 
 % --- Executes on button press in Problema4butt.
