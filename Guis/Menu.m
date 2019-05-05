@@ -75,7 +75,7 @@ varargout{1} = handles.output;
 
 % --- Executes on button press in Problema1but.
 function Problema1but_Callback(hObject, eventdata, handles)
-%Lit solo pon el nombre del archivo fig sin la extensión y ya 
+%Lit solo pon el nombre del archivo fig sin la extensiÃ³n y ya 
 %queda bro
 Problema1
 close(Menu)
@@ -102,6 +102,8 @@ function Problema4butt_Callback(hObject, eventdata, handles)
 % hObject    handle to Problema4butt (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+Problema4
+close(Menu)
 
 
 % --- Executes on button press in Problema5butt.
