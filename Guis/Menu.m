@@ -78,6 +78,7 @@ function Problema1but_Callback(hObject, eventdata, handles)
 %Lit solo pon el nombre del archivo fig sin la extensión y ya 
 %queda bro
 Problema1
+close(Menu)
 
 
 % --- Executes on button press in Problema2but.
@@ -86,6 +87,7 @@ function Problema2but_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 Problema2
+close(Menu)
 
 
 % --- Executes on button press in Problema3butt.
