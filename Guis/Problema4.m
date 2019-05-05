@@ -22,7 +22,7 @@ function varargout = Problema4(varargin)
 
     % Edit the above text to modify the response to help Problema4
 
-    % Last Modified by GUIDE v2.5 04-May-2019 13:49:14
+    % Last Modified by GUIDE v2.5 05-May-2019 17:06:21
 
     % Begin initialization code - DO NOT EDIT
     gui_Singleton = 1;
@@ -231,15 +231,31 @@ function Graficar_Callback(hObject, eventdata, handles)
     timeInterval = str2double(get(handles.timeInterval,'String'));
     numPoints = str2double(get(handles.numPoints,'String'));
 
-    x = xInferior:0.05:xSuperior;
+    x = xInferior:0.0005:xSuperior;
+    
+    a=0;
+    b=0;
     
     for i=1:numPoints
-%         y = asin(y/cos(i));
-        y = sin(x+i);
-        plot(x,y);
+        
+        if (b == 0)
+            a = a + 0.1;
+            if (a >= 1)
+                b = 1;
+            end
+        else 
+            a = a - 0.1;
+            if (a <= -pi)
+                b = 0;
+            end
+        end
+        
+        y = (a+1)*sin(x);
+        plot(x,y) 
+        xlim([xInferior xSuperior]) 
+        ylim([yInferior xSuperior])
         pause(timeInterval);
     end
-
 end
 
 % --- Executes on button press in Volver.
