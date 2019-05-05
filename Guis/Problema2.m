@@ -22,7 +22,7 @@ function varargout = Problema2(varargin)
 
 % Edit the above text to modify the response to help Problema2
 
-% Last Modified by GUIDE v2.5 02-May-2019 09:09:13
+% Last Modified by GUIDE v2.5 04-May-2019 21:39:19
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -71,14 +71,15 @@ function varargout = Problema2_OutputFcn(hObject, eventdata, handles)
 
 % Get default command line output from handles structure
 varargout{1} = handles.output;
+   axes(handles.axes1);
+   imshow('Inicio.jpg');
+
+ 
+   
 
 
 % --- Executes on button press in JugarBoton.
 function JugarBoton_Callback(hObject, eventdata, handles)
-% hObject    handle to JugarBoton (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
 cara1 = randi([1,6], 1,1);
 cara2 = randi([1,6],1,1);
 set(handles.text2, 'String', cara1);
@@ -86,30 +87,55 @@ set(handles.text3, 'String', cara2);
 
 suma = cara1 + cara2;
 set(handles.text8, 'String', suma);
+handles.Suma = suma;
+guidata(hObject, handles);
 
 sumanueva = 0;
-
-if(suma == 2 || suma == 3 || suma == 12)
-   %disp('Perdiste!')
-else
-    while(sumanueva ~= suma)
-        cara1 = randi([1,6], 1,1);
-        cara2 = randi([1,6], 1,1);
-        sumanueva = cara1+cara2;
-        if(sumanueva == 7)
-            %disp('Perdiste!')
-            break
-        end 
-    end 
+if(suma == 2 || suma == 3 || suma == 12 || suma == 7)
+   axes(handles.axes1);
+   imshow('perdiste.jpg');
+   set(handles.JugarBoton,'Enable','off');
+   set(handles.GenerarButton,'Enable','off');
 end 
 
-if(sumanueva ~= 7)
-    %disp('Ganaste!')
-end 
 
 
 % --- Executes on button press in GenerarButton.
 function GenerarButton_Callback(hObject, eventdata, handles)
-% hObject    handle to GenerarButton (see GCBO)
+if isfield(handles, 'Suma')
+        cara1 = randi([1,6], 1,1);
+        cara2 = randi([1,6], 1,1);
+        sumanueva = cara1+cara2;
+        set(handles.text12, 'String', cara1);
+        set(handles.text14, 'String', cara2);
+        set(handles.text16, 'String', sumanueva);
+end
+
+if(sumanueva == handles.Suma)
+   axes(handles.axes1);
+   imshow('ganaste.jpg');
+   set(handles.JugarBoton,'Enable','off');
+   set(handles.GenerarButton,'Enable','off');
+end
+
+
+% --- Executes on button press in ReiniciarButton.
+function ReiniciarButton_Callback(hObject, eventdata, handles)
+axes(handles.axes1);
+imshow('Inicio.jpg');
+set(handles.text2, 'String', '')
+set(handles.text3, 'String', '')
+set(handles.text8, 'String', '')
+set(handles.text12, 'String', '')
+set(handles.text14, 'String', '')
+set(handles.text16, 'String', '')
+set(handles.JugarBoton,'Enable','on');
+set(handles.GenerarButton,'Enable','on');
+
+
+
+% --- Executes on button press in pushbutton4.
+function pushbutton4_Callback(hObject, eventdata, handles)
+% hObject    handle to pushbutton4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
