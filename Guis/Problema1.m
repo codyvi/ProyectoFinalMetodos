@@ -78,9 +78,6 @@ varargout{1} = handles.output;
 
 % --- Executes on button press in MatrizDada.
 function MatrizDada_Callback(hObject, eventdata, handles)
-% hObject    handle to MatrizDada (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 Mdigitada =[
      2     4     6     8    10    12
      1     5     9    13    17    21
@@ -93,9 +90,6 @@ Mdigitada =[
 
 % --- Executes on button press in MatrizVectores.
 function MatrizVectores_Callback(hObject, eventdata, handles)
-% hObject    handle to MatrizVectores (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
 MVectores = [2: 2: 12; 1: 4: 21; 3:-3:-12; (2:2:12).*(2:2:12) ;3:12:63];
  set(handles.uitable3, 'Data',MVectores);
 
@@ -105,3 +99,5 @@ function pushbutton4_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton4 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+Menu
+close(Problema1)
