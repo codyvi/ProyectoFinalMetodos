@@ -22,7 +22,7 @@ function varargout = Menu(varargin)
 
 % Edit the above text to modify the response to help Menu
 
-% Last Modified by GUIDE v2.5 04-May-2019 22:22:17
+% Last Modified by GUIDE v2.5 05-May-2019 15:34:10
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -111,3 +111,5 @@ function Problema5butt_Callback(hObject, eventdata, handles)
 % hObject    handle to Problema5butt (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+Problema5
+close(Menu)
