@@ -43,8 +43,8 @@ function [bV, bI, bestSol, bestValue] = metodo5(func, iter, cols, hmcr, bw, par,
    bV = func(hm(bestIndex(1),:));
    bI = hm(bestIndex(1),:);
    fhm;
-   bestSol = hm(bestIndex(1), :);
-   bestValue = bestValue(1);
+   bestSol = hm(bestIndex(1), :)
+   bestValue 
    disp('Mejor solución')
    disp(hm(bestIndex(1), :))
    disp('Valor de la mejor solución')

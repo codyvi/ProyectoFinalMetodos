@@ -295,8 +295,14 @@ par = get(handles.par, 'String');
 sol = get(handles.soluciones, 'String');
 max = get(handles.maximo, 'String');
 min = get(handles.minimo, 'String');
-[bestIndex, bestValue] = metodo5(f, iter, dim, hmcr, bw, par, sol, max, min);
+[bestIndex, bestValue, bestSol, bestSolVal] = metodo5(f, iter, dim, hmcr, bw, par, sol, max, min);
 plot(handles.axes1, bestIndex, bestValue)
+set(handles.bestSol, 'String', bestSol)
+set(handles.bestSolVal, 'String', bestSolVal)
+disp('Mejor solución')
+disp(bestSol)
+disp('Valor de la mejor solución')
+disp(bestSolVal)
 
 
 
