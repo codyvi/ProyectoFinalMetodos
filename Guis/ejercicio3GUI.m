@@ -61,6 +61,12 @@ guidata(hObject, handles);
 % UIWAIT makes ejercicio3GUI wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 
+axes(handles.funciones)
+matlabImage = imread('functions.png');
+image(matlabImage)
+axis off
+axis image
+
 end
 % --- Outputs from this function are returned to the command line.
 function varargout = ejercicio3GUI_OutputFcn(hObject, eventdata, handles) 
@@ -156,23 +162,23 @@ hold on;
     syms y(x);
     y(x) = piecewise(-7<x<=5, -x, 5<x<7, 2.*x-10, x>7, x.^2);
         d = linspace(min, max, numInt);
-     plot(d,y(d))
+     plot(handles.axes1,d,y(d))
      
      syms h(x);
     h(x) = piecewise(x<3, 2, 5<x<20, log(x), x>23, exp(x));
      e = linspace(min, max, numInt);
-     plot(e,h(e))
+     plot(handles.axes1,e,h(e))
      
      syms g(x);
     g(x) = piecewise(x<-3, 2, -3<=x<=11, x./2, x>11, 3);
      f = linspace(min, max, numInt);
-     plot(f,g(f))
+     plot(handles.axes1,f,g(f))
      time1 =toc;
      
     tic;
-    curve = animatedline('Color','r','Marker', 'none');
-    curve2 = animatedline('Color','b','Marker', 'none');
-    curve3 = animatedline('Color','g','Marker', 'none');
+    curve = animatedline(handles.axes1,'Color','r','Marker', 'none');
+    curve2 = animatedline(handles.axes1, 'Color','b','Marker', 'none');
+    curve3 = animatedline(handles.axes1, 'Color','g','Marker', 'none');
     for i =min : (max-min)/numInt:max
          if i <=5 && i>-7
              addpoints(curve,i,-i);
