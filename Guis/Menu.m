@@ -113,5 +113,5 @@ function Problema5butt_Callback(hObject, eventdata, handles)
 % hObject    handle to Problema5butt (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-Problema5
+ejercicio5
 close(Menu)
